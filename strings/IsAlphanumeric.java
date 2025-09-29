@@ -6,9 +6,9 @@
 class IsAphanumeric {
   public static void main(String[] args) {
     System.out.println("IsAphanumeric Problem");
-    System.out.println(IsAphanumeric('#'));
-    System.out.println(IsAphanumeric('Z'));
-    System.out.println(IsAphanumeric('9'));
+    System.out.println("# is Aplhanmuneric: " + IsAphanumeric('#'));
+    System.out.println("Z is Aplhanmuneric: " + IsAphanumeric('Z'));
+    System.out.println("9 is Aplhanmuneric: " + IsAphanumeric('9'));
   }
 
   private static boolean IsAphanumeric(char c) {
