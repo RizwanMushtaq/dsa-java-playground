@@ -1,8 +1,4 @@
-/**
- * This problem checks if input char is of type alphanumeric?
- * It returns true or false
- */
-
+/** This problem checks if input char is of type alphanumeric? It returns true or false */
 class IsAphanumeric {
   public static void main(String[] args) {
     System.out.println("IsAphanumeric Problem");
