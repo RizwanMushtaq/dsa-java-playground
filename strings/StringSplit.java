@@ -28,5 +28,11 @@ class StringSplit {
     }
 
     return result.toArray(new String[0]);
+
+    /**
+     * Using Stream to convert List of Strings to String Array
+     *
+     * <p>return result.stream().toArray(String[]::new);
+     */
   }
 }
