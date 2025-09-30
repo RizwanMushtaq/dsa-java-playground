@@ -49,7 +49,7 @@ class RunTests {
       if (got != want) {
         throw new RuntimeException(String.format("\nsolve(%s): got: %b, want: %b\n", s, got, want));
       } else {
-        System.out.println(".");
+        System.out.print(".");
       }
     }
   }
