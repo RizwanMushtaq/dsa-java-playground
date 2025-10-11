@@ -23,9 +23,7 @@ class SearchInSortedArray {
 
     while (r - l > 1) {
       int mid = (l + r) / 2;
-      if (arr[mid] == target) {
-        return mid;
-      } else if (arr[mid] < target) {
+      if (arr[mid] < target) {
         l = mid;
       } else {
         r = mid;
