@@ -43,6 +43,7 @@ class RunTests {
     Object[][] tests = {
       {new int[] {-2, 0, 3, 4, 7, 9, 11}, 3, 2},
       {new int[] {-2, 0, 3, 4, 7, 9, 11}, 2, -1},
+      {new int[] {-2, 0, 3, 4, 7, 9, 11}, 9, 5},
       // Edge case - empty array
       {new int[] {}, 5, -1},
       // Edge case - target at start
