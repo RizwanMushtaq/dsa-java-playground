@@ -39,7 +39,10 @@ class RunTests {
         },
         "203"
       },
-      {new String[] {"12.1.1.1", "12.1.1.2", "12.1.1.3", "1.1.1.4"}, "12"}
+      {new String[] {"12.1.1.1", "12.1.1.2", "12.1.1.3", "1.1.1.4"}, "12"},
+      {new String[] {"192.168.1.1", "192.168.1.2", "192.168.1.3", "10.0.0.1", "10.0.0.2"}, "192"},
+      {new String[] {"1.1.1.1", "2.2.2.2", "1.2.3.4", "2.3.4.5"}, "1"},
+      {new String[] {}, null}
     };
 
     MostFrequentOctet solution = new MostFrequentOctet();
@@ -48,20 +51,6 @@ class RunTests {
       String want = (String) test[1];
       String got = solution.solve(ipsArray);
       if (!Objects.equals(got, want)) {
-        // Check if got is an acceptable alternative (same count as want)
-        //        if (want != null && got != null) {
-        //          int gotCount = 0;
-        //          int wantCount = 0;
-        //          for (String ip : ipsArray) {
-        //            if ( == got) gotCount++;
-        //            if (conn[1] == want) wantCount++;
-        //          }
-        //          if (gotCount == wantCount) {
-        //            System.out.print(".");
-        //            continue;
-        //          }
-        //        }
-
         throw new RuntimeException(
             String.format("\nsolve(%s): got: %s, want: %s\n", ipsArray, got, want));
       } else {
