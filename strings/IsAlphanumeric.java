@@ -1,3 +1,5 @@
+package strings;
+
 /** This problem checks if input char is of type alphanumeric? It returns true or false */
 class IsAphanumeric {
   public static void main(String[] args) {
