@@ -13,7 +13,7 @@ public class Card implements Comparable<Card> {
 
   public static void main(String[] args) {
     Card[] deck = {
-      new Card(8, "hearts"), new Card(8, "clubs"), new Card(3, "clubs"), new Card(3, "hearts")
+      new Card(8, "Hearts"), new Card(8, "Clubs"), new Card(3, "Clubs"), new Card(3, "Hearts")
     };
 
     Arrays.sort(deck);
@@ -33,7 +33,7 @@ public class Card implements Comparable<Card> {
   }
 
   private int getSuitValue(String suit) {
-    return switch (suit) {
+    return switch (suit.toLowerCase()) {
       case "clubs" -> 1;
       case "hearts" -> 2;
       case "spades" -> 3;
