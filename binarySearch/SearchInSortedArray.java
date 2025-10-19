@@ -4,7 +4,7 @@ import java.util.*;
 
 class SearchInSortedArray {
   public static void main(String[] main) {
-    RunTests runTests = new RunTests();
+    SearchInSortedArrayTests runTests = new SearchInSortedArrayTests();
     runTests.runTests();
   }
 
@@ -40,7 +40,7 @@ class SearchInSortedArray {
   }
 }
 
-class RunTests {
+class SearchInSortedArrayTests {
   public void runTests() {
     Object[][] tests = {
       {new int[] {-2, 0, 3, 4, 7, 9, 11}, 3, 2},
