@@ -10,6 +10,21 @@ public class BinaryTreeExample {
 
     System.out.println(root.left.left.isLeaf());
     System.out.println(root.left.isLeaf());
+    printLeafNodes(root);
+  }
+
+  public static void printLeafNodes(TreeNode node) {
+    if (node == null) {
+      return;
+    }
+
+    if (node.isLeaf()) {
+      System.out.println(node.data + " ");
+      return;
+    }
+
+    printLeafNodes(node.left);
+    printLeafNodes(node.right);
   }
 }
 
