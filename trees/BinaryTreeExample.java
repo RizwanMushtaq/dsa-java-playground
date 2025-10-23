@@ -1,5 +1,7 @@
 package trees;
 
+import java.util.*;
+
 public class BinaryTreeExample {
   public static void main(String[] args) {
     TreeNode root = new TreeNode(10);
@@ -10,7 +12,15 @@ public class BinaryTreeExample {
 
     System.out.println(root.left.left.isLeaf());
     System.out.println(root.left.isLeaf());
+
+    System.out.println("************************");
     printLeafNodes(root);
+
+    System.out.println("************************");
+    Arrays.stream(getChildrenValues(root)).forEach(item -> System.out.println(item));
+
+    System.out.println("************************");
+    System.out.println(Arrays.toString(getChildrenValues(root)));
   }
 
   public static void printLeafNodes(TreeNode node) {
@@ -26,6 +36,24 @@ public class BinaryTreeExample {
     printLeafNodes(node.left);
     printLeafNodes(node.right);
   }
+
+  public static int[] getChildrenValues(TreeNode node) {
+    if (node == null) {
+      return new int[] {};
+    }
+
+    List<Integer> values = new ArrayList<>();
+
+    if (node.left != null) {
+      values.add(node.left.data);
+    }
+
+    if (node.right != null) {
+      values.add(node.right.data);
+    }
+
+    return values.stream().mapToInt(Integer::intValue).toArray();
+  }
 }
 
 class TreeNode {
@@ -39,7 +67,7 @@ class TreeNode {
     this.right = null;
   }
 
-  boolean isLeaf() {
+  public boolean isLeaf() {
     return this.left == null && this.right == null;
   }
 }
