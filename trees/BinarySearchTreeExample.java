@@ -13,13 +13,12 @@ public class BinarySearchTreeExample {
     bt.add(10);
     bt.add(25);
     bt.add(109);
-
+    System.out.println("************************");
+    System.out.println("testing parent data of root.left.left: " + bt.root.left.left.parent.data);
     System.out.println("************************");
     bt.printLeafNodes(bt.root);
-
     System.out.println("************************");
     System.out.println(bt.containNode(100));
-
     System.out.println("************************");
     System.out.println(bt.root.data);
     System.out.println();
@@ -32,22 +31,18 @@ public class BinarySearchTreeExample {
     bt.traverseLevelOrder(bt.root);
     System.out.println();
 
-    //    bt.delete(100);
-    //    bt.traverseInOrder(bt.root);
-    //    System.out.println();
-    //    System.out.println(bt.root.data);
-
     System.out.println("************************");
-    System.out.println(bt.containNode(100));
-
+    System.out.println("size: " + bt.getSubTreeSize(bt.root));
     System.out.println("************************");
-    bt.printLeafNodes(bt.root);
-
-    System.out.println("************************");
-    System.out.println(bt.getChildrenValues(bt.root));
-
-    System.out.println("************************");
-    System.out.println(bt.getGrandChildrenValues(bt.root));
+    System.out.println("height: " + bt.getSubTreeHeight(bt.root));
+    //    System.out.println("************************");
+    //    System.out.println(bt.containNode(100));
+    //    System.out.println("************************");
+    //    bt.printLeafNodes(bt.root);
+    //    System.out.println("************************");
+    //    System.out.println(bt.getChildrenValues(bt.root));
+    //    System.out.println("************************");
+    //    System.out.println(bt.getGrandChildrenValues(bt.root));
   }
 }
 
@@ -64,18 +59,18 @@ class BinarySearchTree {
    * @param value
    */
   public void add(int value) {
-    root = addRecursive(root, value);
+    root = addRecursive(root, value, null);
   }
 
-  private TreeNode addRecursive(TreeNode current, int value) {
+  private TreeNode addRecursive(TreeNode current, int value, TreeNode parent) {
     if (current == null) {
-      return new TreeNode(value);
+      return new TreeNode(value, parent);
     }
 
     if (value < current.data) {
-      current.left = addRecursive(current.left, value);
+      current.left = addRecursive(current.left, value, current);
     } else if (value > current.data) {
-      current.right = addRecursive(current.right, value);
+      current.right = addRecursive(current.right, value, current);
     } else {
       // value already exists
       return current;
@@ -270,14 +265,29 @@ class BinarySearchTree {
     return Stream.concat(leftChildren.stream(), rightChildren.stream())
         .collect(Collectors.toList());
   }
+
+  public int getSubTreeSize(TreeNode node) {
+    if (node == null) return 0;
+    int leftSize = getSubTreeSize(node.left);
+    int rightSize = getSubTreeSize(node.right);
+    return leftSize + rightSize + 1;
+  }
+
+  public int getSubTreeHeight(TreeNode node) {
+    if (node == null) return 0;
+    int leftHeight = getSubTreeHeight(node.left);
+    int rightHeight = getSubTreeHeight(node.right);
+    return Math.max(leftHeight, rightHeight) + 1;
+  }
 }
 
 class TreeNode {
   int data;
-  TreeNode left, right;
+  TreeNode parent, left, right;
 
-  public TreeNode(int data) {
+  public TreeNode(int data, TreeNode parent) {
     this.data = data;
+    this.parent = parent;
     left = right = null;
   }
 
