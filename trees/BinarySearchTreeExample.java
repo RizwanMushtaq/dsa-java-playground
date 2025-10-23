@@ -19,6 +19,9 @@ public class BinarySearchTreeExample {
     System.out.println(
         "testing getAncestorValues: " + bt.getAncestorValues(bt.root.left.left.left));
     System.out.println("testing getDepth: " + bt.getDepth(bt.root.left.left.left));
+    System.out.println(
+        "Get Distance between nodes: "
+            + bt.getDistanceBetweenNodes(bt.root.left.left.left, bt.root.right));
     System.out.println("************************");
     System.out.println("traverseInOrder: ");
     bt.traverseInOrder(bt.root);
@@ -301,6 +304,41 @@ class BinarySearchTree {
       depth++;
     }
     return depth;
+  }
+
+  public int getLowestCommonAncestor(TreeNode n1, TreeNode n2) {
+    if (n1 == null || n2 == null) return 0;
+    int depth1 = getDepth(n1);
+    int depth2 = getDepth(n2);
+
+    while (depth1 > depth2) {
+      n1 = n1.parent;
+      depth1 -= 1;
+    }
+    while (depth2 > depth1) {
+      n2 = n2.parent;
+      depth2 -= 1;
+    }
+    while (n1.data != n2.data) {
+      n1 = n1.parent;
+      n2 = n2.parent;
+    }
+    return n1.data;
+  }
+
+  public int getDistanceBetweenNodes(TreeNode n1, TreeNode n2) {
+    if (n1 == null || n2 == null) return 0;
+    int lowestCommonAncestorValue = getLowestCommonAncestor(n1, n2);
+    int dist = 0;
+    while (n1.data != lowestCommonAncestorValue) {
+      n1 = n1.parent;
+      dist++;
+    }
+    while (n2.data != lowestCommonAncestorValue) {
+      n2 = n2.parent;
+      dist++;
+    }
+    return dist;
   }
 }
 
