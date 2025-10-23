@@ -16,6 +16,9 @@ public class BinarySearchTreeExample {
     System.out.println("************************");
     System.out.println("testing isRoot: " + bt.isRoot(bt.root.left));
     System.out.println("************************");
+    System.out.println(
+        "testing getAncestorValues: " + bt.getAncestorValues(bt.root.left.left.left));
+    System.out.println("************************");
     System.out.println("traverseInOrder: ");
     bt.traverseInOrder(bt.root);
     System.out.println();
@@ -277,6 +280,16 @@ class BinarySearchTree {
 
   public boolean isRoot(TreeNode node) {
     return node.parent == null;
+  }
+
+  public List<Integer> getAncestorValues(TreeNode node) {
+    if (node == null) return new ArrayList<>();
+    List<Integer> values = new ArrayList<>();
+    while (node.parent != null) {
+      node = node.parent;
+      values.add(node.data);
+    }
+    return values;
   }
 }
 
