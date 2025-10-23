@@ -166,11 +166,10 @@ class BinarySearchTree {
    * @param node
    */
   public void traverseInOrder(TreeNode node) {
-    if (node != null) {
-      traverseInOrder(node.left);
-      System.out.print(" " + node.data);
-      traverseInOrder(node.right);
-    }
+    if (node == null) return;
+    traverseInOrder(node.left);
+    System.out.print(" " + node.data);
+    traverseInOrder(node.right);
   }
 
   /**
@@ -180,11 +179,10 @@ class BinarySearchTree {
    * @param node
    */
   public void traversePreOrder(TreeNode node) {
-    if (node != null) {
-      System.out.print(" " + node.data);
-      traversePreOrder(node.left);
-      traversePreOrder(node.right);
-    }
+    if (node == null) return;
+    System.out.print(" " + node.data);
+    traversePreOrder(node.left);
+    traversePreOrder(node.right);
   }
 
   /**
@@ -193,11 +191,10 @@ class BinarySearchTree {
    * @param node
    */
   public void traversePostOrder(TreeNode node) {
-    if (node != null) {
-      traversePostOrder(node.left);
-      traversePostOrder(node.right);
-      System.out.print(" " + node.data);
-    }
+    if (node == null) return;
+    traversePostOrder(node.left);
+    traversePostOrder(node.right);
+    System.out.print(" " + node.data);
   }
 
   /**
