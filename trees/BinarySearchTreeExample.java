@@ -18,6 +18,7 @@ public class BinarySearchTreeExample {
     System.out.println("************************");
     System.out.println(
         "testing getAncestorValues: " + bt.getAncestorValues(bt.root.left.left.left));
+    System.out.println("testing getDepth: " + bt.getDepth(bt.root.left.left.left));
     System.out.println("************************");
     System.out.println("traverseInOrder: ");
     bt.traverseInOrder(bt.root);
@@ -290,6 +291,16 @@ class BinarySearchTree {
       values.add(node.data);
     }
     return values;
+  }
+
+  public int getDepth(TreeNode node) {
+    if (node == null) return 0;
+    int depth = 0;
+    while (node.parent != null) {
+      node = node.parent;
+      depth++;
+    }
+    return depth;
   }
 }
 
