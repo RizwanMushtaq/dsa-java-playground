@@ -1,6 +1,8 @@
 package trees;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class BinaryTreeExample {
   public static void main(String[] args) {
@@ -9,18 +11,23 @@ public class BinaryTreeExample {
     root.right = new TreeNode(20);
     root.left.left = new TreeNode(-5);
     root.left.right = new TreeNode(0);
+    root.right.left = new TreeNode(32);
+    root.right.right = new TreeNode(100);
 
-    System.out.println(root.left.left.isLeaf());
-    System.out.println(root.left.isLeaf());
+    //    System.out.println(root.left.left.isLeaf());
+    //    System.out.println(root.left.isLeaf());
 
     System.out.println("************************");
     printLeafNodes(root);
 
-    System.out.println("************************");
-    Arrays.stream(getChildrenValues(root)).forEach(item -> System.out.println(item));
+    //    System.out.println("************************");
+    //    Arrays.stream(getChildrenValues(root)).forEach(item -> System.out.println(item));
 
     System.out.println("************************");
-    System.out.println(Arrays.toString(getChildrenValues(root)));
+    System.out.println(getChildrenValues(root));
+
+    System.out.println("************************");
+    System.out.println(getGrandChildrenValues(root));
   }
 
   public static void printLeafNodes(TreeNode node) {
@@ -37,22 +44,30 @@ public class BinaryTreeExample {
     printLeafNodes(node.right);
   }
 
-  public static int[] getChildrenValues(TreeNode node) {
+  public static List<Integer> getChildrenValues(TreeNode node) {
     if (node == null) {
-      return new int[] {};
+      return new ArrayList<>();
     }
 
     List<Integer> values = new ArrayList<>();
+    if (node.left != null) values.add(node.left.data);
+    if (node.right != null) values.add(node.right.data);
 
-    if (node.left != null) {
-      values.add(node.left.data);
+    return values;
+  }
+
+  public static List<Integer> getGrandChildrenValues(TreeNode node) {
+    if (node == null) {
+      return new ArrayList<>();
     }
 
-    if (node.right != null) {
-      values.add(node.right.data);
-    }
+    List<Integer> leftChildren = new ArrayList<>();
+    List<Integer> rightChildren = new ArrayList<>();
+    if (node.left != null) leftChildren = getChildrenValues(node.left);
+    if (node.right != null) rightChildren = getChildrenValues(node.right);
 
-    return values.stream().mapToInt(Integer::intValue).toArray();
+    return Stream.concat(leftChildren.stream(), rightChildren.stream())
+        .collect(Collectors.toList());
   }
 }
 
