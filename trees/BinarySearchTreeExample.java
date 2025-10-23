@@ -14,27 +14,22 @@ public class BinarySearchTreeExample {
     bt.add(25);
     bt.add(109);
     System.out.println("************************");
-    System.out.println("testing parent data of root.left.left: " + bt.root.left.left.parent.data);
+    System.out.println("testing isRoot: " + bt.isRoot(bt.root.left));
     System.out.println("************************");
-    bt.printLeafNodes(bt.root);
-    System.out.println("************************");
-    System.out.println(bt.containNode(100));
-    System.out.println("************************");
-    System.out.println(bt.root.data);
-    System.out.println();
+    System.out.println("traverseInOrder: ");
     bt.traverseInOrder(bt.root);
     System.out.println();
-    bt.traversePreOrder(bt.root);
-    System.out.println();
-    bt.traversePostOrder(bt.root);
-    System.out.println();
-    bt.traverseLevelOrder(bt.root);
-    System.out.println();
+    //    bt.traversePreOrder(bt.root);
+    //    System.out.println();
+    //    bt.traversePostOrder(bt.root);
+    //    System.out.println();
+    //    bt.traverseLevelOrder(bt.root);
+    //    System.out.println();
 
-    System.out.println("************************");
-    System.out.println("size: " + bt.getSubTreeSize(bt.root));
-    System.out.println("************************");
-    System.out.println("height: " + bt.getSubTreeHeight(bt.root));
+    //    System.out.println("************************");
+    //    System.out.println("size: " + bt.getSubTreeSize(bt.root));
+    //    System.out.println("************************");
+    //    System.out.println("height: " + bt.getSubTreeHeight(bt.root));
     //    System.out.println("************************");
     //    System.out.println(bt.containNode(100));
     //    System.out.println("************************");
@@ -278,6 +273,10 @@ class BinarySearchTree {
     int leftHeight = getSubTreeHeight(node.left);
     int rightHeight = getSubTreeHeight(node.right);
     return Math.max(leftHeight, rightHeight) + 1;
+  }
+
+  public boolean isRoot(TreeNode node) {
+    return node.parent == null;
   }
 }
 
