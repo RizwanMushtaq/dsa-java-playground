@@ -55,9 +55,14 @@ class BinarySearchTree {
   public TreeNode root;
 
   public BinarySearchTree() {
-    this.root = null;
+    root = null;
   }
 
+  /**
+   * Add a new value into Binary Search Tree.
+   *
+   * @param value
+   */
   public void add(int value) {
     root = addRecursive(root, value);
   }
@@ -79,6 +84,12 @@ class BinarySearchTree {
     return current;
   }
 
+  /**
+   * Check if a value is present in tree.
+   *
+   * @param value
+   * @return
+   */
   public boolean containNode(int value) {
     return containNodeRecursive(root, value);
   }
@@ -97,6 +108,11 @@ class BinarySearchTree {
         : containNodeRecursive(current.right, value);
   }
 
+  /**
+   * Delete the value from the tree if present.
+   *
+   * @param value
+   */
   public void delete(int value) {
     root = deleteRecursive(root, value);
   }
@@ -143,7 +159,11 @@ class BinarySearchTree {
    *
    * <p>There are several ways to perform a depth-first search: in-order, pre-order and post-order.
    *
-   * <p>The in-order traversal consists of first visiting the left sub-tree, then the root node, and
+   * @param node
+   */
+
+  /**
+   * The in-order traversal consists of first visiting the left sub-tree, then the root node, and *
    * finally the right sub-tree:
    *
    * @param node
@@ -254,13 +274,11 @@ class BinarySearchTree {
 
 class TreeNode {
   int data;
-  TreeNode left;
-  TreeNode right;
+  TreeNode left, right;
 
   public TreeNode(int data) {
     this.data = data;
-    this.left = null;
-    this.right = null;
+    left = right = null;
   }
 
   public boolean isLeaf() {
