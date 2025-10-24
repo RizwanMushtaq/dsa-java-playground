@@ -22,6 +22,7 @@ public class LongestAlignedChain {
   public int solve(Node root) {
     result = 0;
     visit(root, 0);
+    System.out.println("LongestAlignedChain: " + result);
     return result;
   }
 }
