@@ -1,4 +1,4 @@
-package trees;
+package trees.alignedChain;
 
 public class LongestAlignedChain {
   private int result = 0;
@@ -49,8 +49,8 @@ class LongestAlignedChainTests {
   }
 
   public void runTests() {
-    trees.hiddenMessage.TestCase[] testCases = {
-      new trees.hiddenMessage.TestCase(
+    TestCase[] testCases = {
+      new TestCase(
           createNode(
               7,
               createNode(
@@ -59,7 +59,7 @@ class LongestAlignedChainTests {
                   createNode(8, null, null)),
               createNode(3, createNode(2, createNode(3, null, null), null), null)),
           3),
-      new trees.hiddenMessage.TestCase(
+      new TestCase(
           createNode(
               0,
               createNode(
@@ -67,13 +67,13 @@ class LongestAlignedChainTests {
               createNode(5, null, null)),
           4),
       // Test 3: Empty tree
-      new trees.hiddenMessage.TestCase(null, 0),
+      new TestCase(null, 0),
       // Test 4: Single node aligned at root
-      new trees.hiddenMessage.TestCase(createNode(0, null, null), 1),
+      new TestCase(createNode(0, null, null), 1),
       // Test 5: Single node not aligned
-      new trees.hiddenMessage.TestCase(createNode(1, null, null), 0),
+      new TestCase(createNode(1, null, null), 0),
       // Test 6: Multiple valid chains, should return longest
-      new trees.hiddenMessage.TestCase(
+      new TestCase(
           createNode(
               0,
               createNode(
@@ -83,19 +83,18 @@ class LongestAlignedChainTests {
               null),
           4),
       // Test 7: No aligned nodes
-      new trees.hiddenMessage.TestCase(
+      new TestCase(
           createNode(
               5,
               createNode(4, createNode(3, null, null), createNode(3, null, null)),
               createNode(2, null, null)),
           0),
       // Test 8
-      new trees.hiddenMessage.TestCase(
-          createNode(0, createNode(1, null, null), createNode(1, null, null)), 2),
+      new TestCase(createNode(0, createNode(1, null, null), createNode(1, null, null)), 2),
     };
 
     LongestAlignedChain solution = new LongestAlignedChain();
-    for (trees.hiddenMessage.TestCase testCase : testCases) {
+    for (TestCase testCase : testCases) {
       int actual = solution.solve(testCase.root);
       if (actual != testCase.expected) {
         throw new RuntimeException(
