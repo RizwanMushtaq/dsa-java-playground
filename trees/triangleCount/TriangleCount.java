@@ -15,7 +15,7 @@ public class TriangleCount {
     return new TreeSides(left.leftSide + 1, right.rightSide + 1);
   }
 
-  public int solve(Node root) {
+  int solve(Node root) {
     res = 0;
     visit(root);
     System.out.println("result: " + res);
