@@ -1,6 +1,5 @@
 package binarySearch;
 
-import java.util.*;
 import java.util.function.*;
 
 class CCTVFootage {
