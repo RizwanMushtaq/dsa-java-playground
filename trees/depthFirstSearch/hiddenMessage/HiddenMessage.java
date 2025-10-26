@@ -1,4 +1,4 @@
-package trees.hiddenMessage;
+package trees.depthFirstSearch.hiddenMessage;
 
 public class HiddenMessage {
   private StringBuilder message;

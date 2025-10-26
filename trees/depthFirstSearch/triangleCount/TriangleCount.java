@@ -1,4 +1,4 @@
-package trees.triangleCount;
+package trees.depthFirstSearch.triangleCount;
 
 public class TriangleCount {
   private int res;

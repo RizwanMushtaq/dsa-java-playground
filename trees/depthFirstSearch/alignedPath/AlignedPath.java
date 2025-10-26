@@ -1,4 +1,4 @@
-package trees.alignedPath;
+package trees.depthFirstSearch.alignedPath;
 
 public class AlignedPath {
   private int result;

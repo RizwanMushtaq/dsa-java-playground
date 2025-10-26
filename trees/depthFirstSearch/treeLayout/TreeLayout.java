@@ -1,4 +1,4 @@
-package trees.treeLayout;
+package trees.depthFirstSearch.treeLayout;
 
 import java.util.*;
 

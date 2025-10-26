@@ -1,4 +1,4 @@
-package trees.evaluateExpressionTree;
+package trees.depthFirstSearch.evaluateExpressionTree;
 
 import java.util.*;
 

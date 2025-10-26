@@ -1,4 +1,4 @@
-package trees.binarySearch;
+package trees.binarySearchTree;
 
 import java.util.*;
 import java.util.stream.Collectors;

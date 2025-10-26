@@ -1,4 +1,4 @@
-package trees.alignedChain;
+package trees.depthFirstSearch.alignedChain;
 
 public class LongestAlignedChain {
   private int result = 0;
