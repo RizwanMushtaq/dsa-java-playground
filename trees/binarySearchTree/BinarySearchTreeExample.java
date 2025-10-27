@@ -13,25 +13,28 @@ public class BinarySearchTreeExample {
     bt.add(10);
     bt.add(25);
     bt.add(109);
-    System.out.println("************************");
-    System.out.println("testing isRoot: " + bt.isRoot(bt.root.left));
-    System.out.println("************************");
-    System.out.println(
-        "testing getAncestorValues: " + bt.getAncestorValues(bt.root.left.left.left));
-    System.out.println("testing getDepth: " + bt.getDepth(bt.root.left.left.left));
-    System.out.println(
-        "Get Distance between nodes: "
-            + bt.getDistanceBetweenNodes(bt.root.left.left.left, bt.root.right));
+    //    System.out.println("************************");
+    //    System.out.println("testing isRoot: " + bt.isRoot(bt.root.left));
+    //    System.out.println("************************");
+    //    System.out.println(
+    //        "testing getAncestorValues: " + bt.getAncestorValues(bt.root.left.left.left));
+    //    System.out.println("testing getDepth: " + bt.getDepth(bt.root.left.left.left));
+    //    System.out.println(
+    //        "Get Distance between nodes: "
+    //            + bt.getDistanceBetweenNodes(bt.root.left.left.left, bt.root.right));
     System.out.println("************************");
     System.out.println("traverseInOrder: ");
     bt.traverseInOrder(bt.root);
     System.out.println();
-    //    bt.traversePreOrder(bt.root);
-    //    System.out.println();
-    //    bt.traversePostOrder(bt.root);
-    //    System.out.println();
-    //    bt.traverseLevelOrder(bt.root);
-    //    System.out.println();
+    System.out.println("traversePreOrder: ");
+    bt.traversePreOrder(bt.root);
+    System.out.println();
+    System.out.println("traversePostOrder: ");
+    bt.traversePostOrder(bt.root);
+    System.out.println();
+    System.out.println("traverseLevelOrder: ");
+    bt.traverseLevelOrder(bt.root);
+    System.out.println();
 
     //    System.out.println("************************");
     //    System.out.println("size: " + bt.getSubTreeSize(bt.root));
@@ -210,18 +213,16 @@ class BinarySearchTree {
    * @param node
    */
   public void traverseLevelOrder(TreeNode node) {
-    if (node == null) return;
     Queue<TreeNode> nodes = new LinkedList<>();
     nodes.add(node);
     while (!nodes.isEmpty()) {
       TreeNode n = nodes.remove();
+      if (n == null) {
+        continue;
+      }
       System.out.print(" " + n.data);
-      if (n.left != null) {
-        nodes.add(n.left);
-      }
-      if (n.right != null) {
-        nodes.add(n.right);
-      }
+      nodes.add(n.left);
+      nodes.add(n.right);
     }
   }
 
