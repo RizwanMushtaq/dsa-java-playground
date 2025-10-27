@@ -35,7 +35,9 @@ public class BinarySearchTreeExample {
     System.out.println("traverseLevelOrder: ");
     bt.traverseLevelOrder(bt.root);
     System.out.println();
-
+    System.out.println("traverseLevelOrderWithDepth: ");
+    bt.traverseLevelOrderWithDepth(bt.root);
+    System.out.println();
     //    System.out.println("************************");
     //    System.out.println("size: " + bt.getSubTreeSize(bt.root));
     //    System.out.println("************************");
@@ -223,6 +225,22 @@ class BinarySearchTree {
       System.out.print(" " + n.data);
       nodes.add(n.left);
       nodes.add(n.right);
+    }
+  }
+
+  public void traverseLevelOrderWithDepth(TreeNode node) {
+    Queue<Map.Entry<TreeNode, Integer>> nodes = new LinkedList<>();
+    nodes.add(Map.entry(node, 0));
+    while (!nodes.isEmpty()) {
+      Map.Entry<TreeNode, Integer> entry = nodes.remove();
+      TreeNode n = entry.getKey();
+      Integer level = entry.getValue();
+      if (n == null) {
+        continue;
+      }
+      System.out.println(" " + n.data + " " + level);
+      if (n.left != null) nodes.add(Map.entry(n.left, level + 1));
+      if (n.right != null) nodes.add(Map.entry(n.right, level + 1));
     }
   }
 
