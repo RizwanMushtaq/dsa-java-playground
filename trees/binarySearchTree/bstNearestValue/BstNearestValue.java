@@ -5,10 +5,10 @@ public class BstNearestValue {
     new RunTests().runTests();
   }
 
-  long solve(Node root, int target) {
+  int solve(Node root, int target) {
     Node currNode = root;
-    long nextAbove = Long.MAX_VALUE;
-    long nextBelow = Long.MIN_VALUE;
+    int nextAbove = Integer.MAX_VALUE;
+    int nextBelow = Integer.MIN_VALUE;
     while (currNode != null) {
       if (currNode.value == target) {
         return currNode.value;
@@ -20,8 +20,8 @@ public class BstNearestValue {
         currNode = currNode.right;
       }
     }
-    if (nextAbove == Long.MAX_VALUE) return nextBelow;
-    if (nextBelow == Long.MIN_VALUE) return nextAbove;
+    if (nextAbove == Integer.MAX_VALUE) return nextBelow;
+    if (nextBelow == Integer.MIN_VALUE) return nextAbove;
 
     if (nextAbove - target < target - nextBelow) {
       return nextAbove;
