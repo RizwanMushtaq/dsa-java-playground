@@ -17,10 +17,10 @@ public class BstSearch {
 }
 
 class Node {
-  public Integer value;
+  public int value;
   public Node left, right;
 
-  public Node(Integer value) {
+  public Node(int value) {
     this.value = value;
     left = right = null;
   }
