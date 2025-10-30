@@ -11,7 +11,6 @@ public class BstMergeIntoArray {
   }
 
   List<Integer> solve(Node root1, Node root2) {
-    if (root1 == null && root2 == null) return Collections.emptyList();
     List<Integer> list1 = new ArrayList<>();
     List<Integer> list2 = new ArrayList<>();
     inorderTraverse(root1, list1);
