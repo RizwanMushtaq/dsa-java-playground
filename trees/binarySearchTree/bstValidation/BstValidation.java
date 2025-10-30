@@ -22,7 +22,7 @@ public class BstValidation {
     visit(node.right, state);
   }
 
-  private class State {
+  private static class State {
     public int preValue;
     public boolean result;
 
