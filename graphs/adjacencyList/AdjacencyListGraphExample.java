@@ -18,16 +18,29 @@ public class AdjacencyListGraphExample {
     myGraph.addEdge("a", "c");
     myGraph.addEdge("b", "c");
     myGraph.printGraph();
-    System.out.println("number of nodes are " + myGraph.getNumberOfNodes());
-    System.out.println("number of edges are " + myGraph.getNumberOfEdges());
-    System.out.println("degree of node a is " + myGraph.getDegreeOfNode("a"));
-    System.out.println("degree of node r is " + myGraph.getDegreeOfNode("r"));
-    myGraph.printNeighborsOfNode("c");
-    myGraph.printNeighborsOfNode("r");
+    myGraph.removeVertex("a");
+    myGraph.printGraph();
+    myGraph.addVertex("a");
+    myGraph.addEdge("a", "b");
+    myGraph.addEdge("a", "c");
+    myGraph.printGraph();
+
+    //    System.out.println("number of nodes are " + myGraph.getNumberOfNodes());
+    //    System.out.println("number of edges are " + myGraph.getNumberOfEdges());
+    //    System.out.println("degree of node a is " + myGraph.getDegreeOfNode("a"));
+    //    System.out.println("degree of node r is " + myGraph.getDegreeOfNode("r"));
+    //    myGraph.printNeighborsOfNode("c");
+    //    myGraph.printNeighborsOfNode("r");
   }
 
   private void addVertex(String label) {
     adjVertices.putIfAbsent(new Vertex(label), new HashSet<>());
+  }
+
+  private void removeVertex(String label) {
+    Vertex v = new Vertex(label);
+    adjVertices.values().stream().forEach(set -> set.remove(v));
+    adjVertices.remove(v);
   }
 
   private void addEdge(String label1, String label2) {
@@ -66,9 +79,11 @@ public class AdjacencyListGraphExample {
   }
 
   private void printGraph() {
+    System.out.println("***graph***");
     for (Vertex v : adjVertices.keySet()) {
       System.out.println(v + "-" + adjVertices.get(v));
     }
+    System.out.println("***end***");
   }
 }
 
