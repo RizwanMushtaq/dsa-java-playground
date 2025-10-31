@@ -24,6 +24,8 @@ public class AdjacencyListGraphExample {
     myGraph.addEdge("a", "b");
     myGraph.addEdge("a", "c");
     myGraph.printGraph();
+    myGraph.removeEdge("b", "c");
+    myGraph.printGraph();
 
     //    System.out.println("number of nodes are " + myGraph.getNumberOfNodes());
     //    System.out.println("number of edges are " + myGraph.getNumberOfEdges());
@@ -48,6 +50,15 @@ public class AdjacencyListGraphExample {
     Vertex v2 = new Vertex(label2);
     adjVertices.get(v1).add(v2);
     adjVertices.get(v2).add(v1);
+  }
+
+  private void removeEdge(String label1, String label2) {
+    Vertex v1 = new Vertex(label1);
+    Vertex v2 = new Vertex(label2);
+    Set<Vertex> neighbors1 = adjVertices.get(v1);
+    Set<Vertex> neighbors2 = adjVertices.get(v2);
+    if (neighbors1 != null) neighbors1.remove(v2);
+    if (neighbors2 != null) neighbors2.remove(v1);
   }
 
   private int getNumberOfNodes() {
