@@ -18,6 +18,7 @@ public class AdjacencyListGraphExample {
     myGraph.addEdge("a", "c");
     myGraph.addEdge("b", "c");
     myGraph.printGraph();
+    System.out.println("adjacency vertices are " + myGraph.getAdjVertices("a"));
     myGraph.removeVertex("a");
     myGraph.printGraph();
     myGraph.addVertex("a");
@@ -41,7 +42,7 @@ public class AdjacencyListGraphExample {
 
   private void removeVertex(String label) {
     Vertex v = new Vertex(label);
-    adjVertices.values().stream().forEach(set -> set.remove(v));
+    adjVertices.values().forEach(set -> set.remove(v));
     adjVertices.remove(v);
   }
 
@@ -59,6 +60,10 @@ public class AdjacencyListGraphExample {
     Set<Vertex> neighbors2 = adjVertices.get(v2);
     if (neighbors1 != null) neighbors1.remove(v2);
     if (neighbors2 != null) neighbors2.remove(v1);
+  }
+
+  private Set<Vertex> getAdjVertices(String label) {
+    return adjVertices.get(new Vertex(label));
   }
 
   private int getNumberOfNodes() {
