@@ -9,6 +9,7 @@ public class AdjacencyListValidation {
   }
 
   boolean solve(int[][] graph) {
+    if (graph == null) return false;
     int V = graph.length;
     for (int node = 0; node < V; node++) {
       Set<Integer> seen = new HashSet<>();
@@ -32,7 +33,7 @@ public class AdjacencyListValidation {
       }
     }
     // If node1 appears in graph[node1], then node2 also appear in graph[node1]
-    return edges.isEmpty(); //
+    return edges.isEmpty();
   }
 }
 
