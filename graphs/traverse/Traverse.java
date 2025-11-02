@@ -14,7 +14,7 @@ public class Traverse {
     List<List<Integer>> graph2 =
         List.of(List.of(1, 2), List.of(0, 3, 4), List.of(0, 3), List.of(1, 2, 4), List.of(1, 3));
 
-    List<Integer> result2 = new Traverse().dfs(graph2, 0);
+    List<Integer> result2 = new Traverse().dfs(graph2, 1);
     System.out.println("graph: " + graph2 + " dfs: " + result2);
   }
 
