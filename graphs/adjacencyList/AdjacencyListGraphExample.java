@@ -27,6 +27,7 @@ public class AdjacencyListGraphExample {
     System.out.println(
         "depth first traversal: "
             + myGraph.depthFirstTraversal(myGraph.adjVertices, new Vertex("b")));
+    System.out.println("dfs without stack: " + myGraph.dfs(myGraph.adjVertices, new Vertex("b")));
     System.out.println(
         "breadth first traversal: "
             + myGraph.breadthFirstTraversal(myGraph.adjVertices, new Vertex("b")));
@@ -128,6 +129,22 @@ public class AdjacencyListGraphExample {
       }
     }
     return visited;
+  }
+
+  private Set<Vertex> dfs(Map<Vertex, Set<Vertex>> graph, Vertex vertex) {
+    if (vertex == null || !graph.containsKey(vertex)) return new HashSet<>();
+    Set<Vertex> visited = new LinkedHashSet<>();
+    dfsVisit(graph, vertex, visited);
+    return visited;
+  }
+
+  private void dfsVisit(Map<Vertex, Set<Vertex>> graph, Vertex vertex, Set<Vertex> visited) {
+    visited.add(vertex);
+    for (Vertex item : getAdjVertices(vertex.label)) {
+      if (!visited.contains(item)) {
+        dfsVisit(graph, item, visited);
+      }
+    }
   }
 
   private Set<Vertex> breadthFirstTraversal(Map<Vertex, Set<Vertex>> graph, Vertex vertex) {
