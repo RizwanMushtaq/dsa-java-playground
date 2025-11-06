@@ -1,9 +1,6 @@
 package graphs.traverse;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Traverse {
   public static void main(String[] args) {
@@ -17,6 +14,13 @@ public class Traverse {
         List.of(List.of(1, 2), List.of(0, 3, 4), List.of(0, 3), List.of(1, 2, 4), List.of(1, 3));
     System.out.println("graph: " + graph2 + " bfs: " + traverse.bfs(graph2, 1));
     System.out.println("graph: " + graph2 + " dfs: " + traverse.dfs(graph2, 1));
+
+    List<List<Integer>> graph3 =
+        List.of(List.of(1, 3), List.of(0, 2, 3), List.of(1, 3), List.of(0, 1, 2, 4), List.of(3));
+    System.out.println("graph: " + graph3 + " bfs: " + traverse.bfs(graph3, 0));
+    System.out.println(
+        "graph: " + graph3 + " bfsWithDistances: " + traverse.bfsWithDistances(graph3, 0));
+    System.out.println("graph: " + graph3 + " dfs: " + traverse.dfs(graph3, 0));
   }
 
   private List<Integer> bfs(List<List<Integer>> graph, Integer v) {
@@ -37,6 +41,25 @@ public class Traverse {
       }
     }
     return visited;
+  }
+
+  private Map<Integer, Integer> bfsWithDistances(List<List<Integer>> graph, Integer start) {
+    if (start == null) return new LinkedHashMap<>();
+    if (start < 0 || start >= graph.size()) return new LinkedHashMap<>();
+    Queue<Integer> queue = new LinkedList<>();
+    Map<Integer, Integer> visitedToDistance = new LinkedHashMap<>();
+    queue.add(start);
+    visitedToDistance.put(start, 0);
+    while (!queue.isEmpty()) {
+      int node = queue.remove();
+      for (int nbr : graph.get(node)) {
+        if (!visitedToDistance.containsKey(nbr)) {
+          visitedToDistance.put(nbr, visitedToDistance.get(node) + 1);
+          queue.add(nbr);
+        }
+      }
+    }
+    return visitedToDistance;
   }
 
   private List<Integer> dfs(List<List<Integer>> graph, Integer v) {
