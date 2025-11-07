@@ -1,4 +1,4 @@
-package graphs.countGridIslands;
+package graphs.gridGraphs.countGridIslands;
 
 public class CountGridIslands {
   private final int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
