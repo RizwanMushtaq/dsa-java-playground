@@ -1,4 +1,4 @@
-package graphs.graphPath;
+package graphs.adjacencyListDFS.graphPath;
 
 import java.util.*;
 

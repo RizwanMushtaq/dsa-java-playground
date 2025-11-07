@@ -1,4 +1,4 @@
-package graphs.adjancencyListValidation;
+package graphs.adjacencyListTopic.adjancencyListValidation;
 
 import java.util.HashSet;
 import java.util.Set;

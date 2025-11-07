@@ -1,4 +1,4 @@
-package graphs.highestAverageElevationGain;
+package graphs.adjacencyListDFS.highestAverageElevationGain;
 
 import java.util.ArrayList;
 import java.util.HashMap;

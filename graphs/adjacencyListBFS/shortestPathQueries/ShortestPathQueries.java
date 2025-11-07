@@ -1,4 +1,4 @@
-package graphs.shortestPathQueries;
+package graphs.adjacencyListBFS.shortestPathQueries;
 
 import java.util.*;
 import java.util.stream.Collectors;

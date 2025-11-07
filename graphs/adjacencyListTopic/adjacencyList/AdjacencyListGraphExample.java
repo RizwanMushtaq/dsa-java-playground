@@ -1,4 +1,4 @@
-package graphs.adjacencyList;
+package graphs.adjacencyListTopic.adjacencyList;
 
 import java.util.*;
 

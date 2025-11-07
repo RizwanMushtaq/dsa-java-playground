@@ -1,4 +1,4 @@
-package graphs.graphHangout;
+package graphs.adjacencyListBFS.graphHangout;
 
 import java.util.*;
 

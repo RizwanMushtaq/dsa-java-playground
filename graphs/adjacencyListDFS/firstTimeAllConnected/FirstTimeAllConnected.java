@@ -1,4 +1,4 @@
-package graphs.firstTimeAllConnected;
+package graphs.adjacencyListDFS.firstTimeAllConnected;
 
 import java.util.ArrayList;
 import java.util.HashSet;

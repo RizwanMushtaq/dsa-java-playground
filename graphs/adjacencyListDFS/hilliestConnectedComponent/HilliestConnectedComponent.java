@@ -1,4 +1,4 @@
-package graphs.hilliestConnectedComponent;
+package graphs.adjacencyListDFS.hilliestConnectedComponent;
 
 import java.util.ArrayList;
 import java.util.HashMap;

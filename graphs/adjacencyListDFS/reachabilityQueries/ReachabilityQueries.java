@@ -1,4 +1,4 @@
-package graphs.reachabilityQueries;
+package graphs.adjacencyListDFS.reachabilityQueries;
 
 import java.util.*;
 import java.util.stream.Collectors;

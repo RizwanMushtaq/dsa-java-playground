@@ -1,4 +1,4 @@
-package graphs.treeCheck;
+package graphs.adjacencyListDFS.treeCheck;
 
 import java.util.HashMap;
 import java.util.Map;

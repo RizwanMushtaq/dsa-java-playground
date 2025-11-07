@@ -1,4 +1,4 @@
-package graphs.daysUntilAllInfected;
+package graphs.adjacencyListBFS.daysUntilAllInfected;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package graphs.spanningTree;
+package graphs.adjacencyListDFS.spanningTree;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package graphs.stronglyConnectedGraph;
+package graphs.adjacencyListDFS.stronglyConnectedGraph;
 
 import java.util.ArrayList;
 import java.util.HashSet;
