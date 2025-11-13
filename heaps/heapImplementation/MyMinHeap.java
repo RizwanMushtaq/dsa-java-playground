@@ -2,16 +2,16 @@ package heaps.heapImplementation;
 
 import java.util.*;
 
-public class MyHeap<T extends Comparable<T>> {
+public class MyMinHeap<T extends Comparable<T>> {
   private final ArrayList<T> list;
 
-  public MyHeap() {
+  public MyMinHeap() {
     list = new ArrayList<>();
   }
 
   public static void main(String[] args) throws Exception {
     System.out.println("Hallo");
-    MyHeap<Integer> myHeap = new MyHeap<>();
+    MyMinHeap<Integer> myHeap = new MyMinHeap<>();
     myHeap.insert(4);
     myHeap.insert(2);
     myHeap.insert(6);
