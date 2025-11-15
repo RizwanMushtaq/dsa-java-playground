@@ -1,4 +1,4 @@
-package IBMQuestions;
+package companies.IBMQuestions;
 
 import java.util.*;
 
