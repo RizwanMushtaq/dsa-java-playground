@@ -1,13 +1,13 @@
-package heaps.topSongsClass;
+package heaps.topSongsClassWithUpdates;
 
 import java.util.*;
 
-public class TopSongs {
+public class TopSongsWithUpdates {
   private final int k;
   private final PriorityQueue<Song> maxHeap;
   private final Map<String, Integer> titleToTotalPlays;
 
-  public TopSongs(int k) {
+  public TopSongsWithUpdates(int k) {
     this.k = k;
     maxHeap = new PriorityQueue<>((a, b) -> Integer.compare(b.plays(), a.plays()));
     titleToTotalPlays = new HashMap<>();
@@ -46,7 +46,7 @@ record Song(String title, int plays) {}
 class RunTests {
   public void runTests() {
     // Example from the book
-    TopSongs s = new TopSongs(3);
+    TopSongsWithUpdates s = new TopSongsWithUpdates(3);
     s.registerPlays("Boolean Rhapsody", 100);
     s.registerPlays("Boolean Rhapsody", 193); // Total 293
     s.registerPlays("Coding In The Deep", 75);
@@ -72,7 +72,7 @@ class RunTests {
 
     // Additional test cases
     // Test with fewer songs than k
-    TopSongs s2 = new TopSongs(5);
+    TopSongsWithUpdates s2 = new TopSongsWithUpdates(5);
     s2.registerPlays("Song A", 100);
     s2.registerPlays("Song B", 200);
     result = s2.topK();
@@ -85,7 +85,7 @@ class RunTests {
     }
 
     // Test with exact k songs
-    TopSongs s3 = new TopSongs(3);
+    TopSongsWithUpdates s3 = new TopSongsWithUpdates(3);
     s3.registerPlays("Song A", 100);
     s3.registerPlays("Song B", 200);
     s3.registerPlays("Song C", 300);
@@ -99,7 +99,7 @@ class RunTests {
     }
 
     // Test with ties in play counts
-    TopSongs s4 = new TopSongs(2);
+    TopSongsWithUpdates s4 = new TopSongsWithUpdates(2);
     s4.registerPlays("Song A", 100);
     s4.registerPlays("Song B", 100);
     s4.registerPlays("Song C", 100);
