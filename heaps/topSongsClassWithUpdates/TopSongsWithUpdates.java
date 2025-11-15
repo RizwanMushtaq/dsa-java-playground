@@ -28,15 +28,13 @@ public class TopSongsWithUpdates {
 
   public List<String> topK() {
     List<String> topSongs = new ArrayList<>();
-    List<Song> tempHeap = new ArrayList<>();
-    while (topSongs.size() < k && !maxHeap.isEmpty()) {
-      Song song = maxHeap.poll();
+    PriorityQueue<Song> tempHeap = new PriorityQueue<>(maxHeap);
+    while (topSongs.size() < k && !tempHeap.isEmpty()) {
+      Song song = tempHeap.poll();
       if (titleToTotalPlays.get(song.title()) == song.plays()) {
         topSongs.add(song.title());
       }
-      tempHeap.add(song);
     }
-    maxHeap.addAll(tempHeap);
     return topSongs;
   }
 }
