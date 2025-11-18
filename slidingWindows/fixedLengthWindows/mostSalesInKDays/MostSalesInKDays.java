@@ -1,4 +1,4 @@
-package slidingWindows.mostSalesInKDays;
+package slidingWindows.fixedLengthWindows.mostSalesInKDays;
 
 import java.util.Arrays;
 
