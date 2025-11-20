@@ -15,12 +15,11 @@ class SearchInSortedArray {
 
     int l = 0, r = arr.length - 1;
 
-    if (arr[l] > target || arr[r] < target) {
+    if (arr[l] >= target || arr[r] < target) {
+      if (arr[l] == target) {
+        return l;
+      }
       return -1;
-    }
-
-    if (arr[l] == target) {
-      return l;
     }
 
     while (r - l > 1) {
