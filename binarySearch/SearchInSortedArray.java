@@ -15,8 +15,8 @@ class SearchInSortedArray {
 
     int l = 0, r = arr.length - 1;
 
-    if (arr[l] >= target || arr[r] < target) {
-      if (arr[l] == target) {
+    if (target <= arr[l] || target > arr[r]) {
+      if (target == arr[l]) {
         return l;
       }
       return -1;
@@ -24,14 +24,14 @@ class SearchInSortedArray {
 
     while (r - l > 1) {
       int mid = (l + r) / 2;
-      if (arr[mid] < target) {
+      if (target > arr[mid]) {
         l = mid;
       } else {
         r = mid;
       }
     }
 
-    if (arr[r] == target) {
+    if (target == arr[r]) {
       return r;
     }
 
