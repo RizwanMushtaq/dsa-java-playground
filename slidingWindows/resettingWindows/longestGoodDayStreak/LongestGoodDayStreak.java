@@ -1,4 +1,4 @@
-package slidingWindows.ResettingWindows.longestGoodDayStreak;
+package slidingWindows.resettingWindows.longestGoodDayStreak;
 
 import java.util.*;
 
