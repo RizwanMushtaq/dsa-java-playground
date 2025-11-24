@@ -79,6 +79,14 @@ public class Employee {
     List<Employee> employeesWithAgeGreaterThan28 =
         empList.stream().filter(emp -> emp.getAge() > 28).collect(Collectors.toList());
     System.out.println("employeesWithAgeGreaterThan28::" + employeesWithAgeGreaterThan28);
+
+    // find maximum age employee in the organization
+    Optional<Employee> oldestEmployee =
+        empList.stream().max(Comparator.comparingInt(Employee::getAge));
+    if (oldestEmployee.isPresent()) System.out.println("Oldest Employee :: " + oldestEmployee);
+
+    // Get Average Age of Male and Female Employees
+
   }
 
   @Override
