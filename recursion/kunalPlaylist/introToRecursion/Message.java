@@ -1,6 +1,6 @@
 package recursion.kunalPlaylist.introToRecursion;
 
-public class IntoToRecursion {
+public class Message {
   public static void main(String[] args) {
     message();
   }
