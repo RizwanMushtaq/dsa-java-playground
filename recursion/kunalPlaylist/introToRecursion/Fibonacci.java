@@ -2,7 +2,8 @@ package recursion.kunalPlaylist.introToRecursion;
 
 public class Fibonacci {
   public static void main(String[] args) {
-    System.out.println(fibo(6));
+    int result = fibo(4);
+    System.out.println(result);
   }
 
   static int fibo(int n) {
