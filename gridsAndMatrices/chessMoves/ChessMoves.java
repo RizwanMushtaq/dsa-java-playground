@@ -1,4 +1,4 @@
-package gridsAndMatrices;
+package gridsAndMatrices.chessMoves;
 
 import java.util.*;
 

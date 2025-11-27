@@ -1,4 +1,4 @@
-package gridsAndMatrices;
+package gridsAndMatrices.spiralOrder;
 
 import java.util.*;
 

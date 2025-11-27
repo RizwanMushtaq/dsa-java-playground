@@ -1,4 +1,4 @@
-package gridsAndMatrices;
+package gridsAndMatrices.queensReach;
 
 class QueensReach {
   public static void main(String[] args) {

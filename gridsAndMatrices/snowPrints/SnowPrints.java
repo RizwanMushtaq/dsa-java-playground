@@ -1,4 +1,4 @@
-package gridsAndMatrices;
+package gridsAndMatrices.snowPrints;
 
 import java.util.*;
 
