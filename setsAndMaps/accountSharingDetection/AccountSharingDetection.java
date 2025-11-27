@@ -1,4 +1,4 @@
-package setsAndMaps;
+package setsAndMaps.accountSharingDetection;
 
 import java.util.*;
 

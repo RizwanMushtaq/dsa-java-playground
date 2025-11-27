@@ -1,4 +1,4 @@
-package setsAndMaps;
+package setsAndMaps.mostFrequentOctet;
 
 import java.util.*;
 

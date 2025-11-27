@@ -1,4 +1,4 @@
-package setsAndMaps;
+package setsAndMaps.domainResolver;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package setsAndMaps;
+package setsAndMaps.multiAccountCheating;
 
 import java.util.*;
 
