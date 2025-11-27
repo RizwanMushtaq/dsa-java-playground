@@ -1,6 +1,4 @@
-package TwoPointers;
-
-import java.util.*;
+package TwoPointers.palindromicSentence;
 
 class PalindromicSentence {
   public static void main(String[] args) {

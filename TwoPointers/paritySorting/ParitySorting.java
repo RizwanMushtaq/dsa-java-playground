@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.paritySorting;
 
 import java.util.*;
 

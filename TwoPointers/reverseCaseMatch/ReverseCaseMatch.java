@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.reverseCaseMatch;
 
 class ReverseCaseMatch {
   public static void main(String[] args) {

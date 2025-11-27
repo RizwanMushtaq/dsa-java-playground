@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.missingNumbersInRange;
 
 import java.util.*;
 

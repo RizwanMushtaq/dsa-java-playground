@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.threeWayMerge;
 
 import java.util.*;
 

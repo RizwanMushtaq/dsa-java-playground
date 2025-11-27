@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.arrayReversal;
 
 import java.util.*;
 

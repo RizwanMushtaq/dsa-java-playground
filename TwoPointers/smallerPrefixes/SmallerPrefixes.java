@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.smallerPrefixes;
 
 class SmallerPrefixes {
   public static void main(String[] args) {

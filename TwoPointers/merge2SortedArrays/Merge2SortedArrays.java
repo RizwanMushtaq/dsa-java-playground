@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.merge2SortedArrays;
 
 import java.util.*;
 

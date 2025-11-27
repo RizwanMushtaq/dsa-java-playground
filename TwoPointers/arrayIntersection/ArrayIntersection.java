@@ -1,3 +1,5 @@
+package TwoPointers.arrayIntersection;
+
 import java.util.*;
 
 class ArrayIntersection {

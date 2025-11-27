@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.intervalIntersection;
 
 import java.util.*;
 

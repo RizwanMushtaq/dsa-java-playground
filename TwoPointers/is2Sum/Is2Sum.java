@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.is2Sum;
 
 class Is2Sum {
   public static void main(String[] args) {

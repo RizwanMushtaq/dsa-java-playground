@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers.palindromeCheck;
 
 public class PalindromeCheck {
   public static void main(String[] args) {
