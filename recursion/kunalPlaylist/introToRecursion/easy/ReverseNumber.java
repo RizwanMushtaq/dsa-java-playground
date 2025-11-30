@@ -4,7 +4,7 @@ public class ReverseNumber {
   static int sum = 0;
 
   public static void main(String[] args) {
-    System.out.println(rev2(1234));
+    System.out.println(rev2(1234321));
   }
 
   static void rev1(int n) {
