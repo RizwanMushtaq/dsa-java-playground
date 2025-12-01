@@ -2,7 +2,7 @@ package recursion.kunalPlaylist.introToRecursion.easy;
 
 public class NoOfZeros {
   public static void main(String[] args) {
-    System.out.println(solve(4506505));
+    System.out.println(solve(450650005));
     System.out.println(solve(5));
   }
 
