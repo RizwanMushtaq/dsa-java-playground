@@ -5,6 +5,8 @@ import java.util.*;
 public class TargetOccurrences {
   public static void main(String[] args) {
     System.out.println(solve(new int[] {8, 5, 4, 5}, 5));
+    System.out.println(solve(new int[] {8, 5, 4, 5}, 4));
+    System.out.println(solve(new int[] {8, 5, 4, 5}, 40));
   }
 
   private static List<Integer> solve(int[] arr, int target) {
