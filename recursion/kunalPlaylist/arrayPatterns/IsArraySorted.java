@@ -1,6 +1,6 @@
 package recursion.kunalPlaylist.arrayPatterns;
 
-public class isArraySorted {
+public class IsArraySorted {
   public static void main(String[] args) {
     System.out.println(solve(new int[] {5, 6, 6, 10}));
   }
