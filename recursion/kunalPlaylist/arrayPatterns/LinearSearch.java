@@ -6,11 +6,11 @@ public class LinearSearch {
     System.out.println(solve(new int[] {8, 2, 5, 9}, 10));
   }
 
-  static int solve(int[] arr, int target) {
+  private static int solve(int[] arr, int target) {
     return helper(arr, target, 0);
   }
 
-  static int helper(int[] arr, int target, int index) {
+  private static int helper(int[] arr, int target, int index) {
     if (index == arr.length) return -1;
     if (arr[index] == target) return index;
     return helper(arr, target, index + 1);
