@@ -22,6 +22,8 @@ public class TargetOccurrences {
     return helper(arr, target, index + 1, result);
   }
 
+  // This is not good approach as every function call will create new object.
+  // This is another thought process, by which some problem could be solved.
   // When we dont want to pass result array in argument and will create new
   // array with every function call.
   private static ArrayList<Integer> helperWithoutResultArray(int[] arr, int target, int index) {
