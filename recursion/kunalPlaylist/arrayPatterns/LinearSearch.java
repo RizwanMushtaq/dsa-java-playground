@@ -3,6 +3,7 @@ package recursion.kunalPlaylist.arrayPatterns;
 public class LinearSearch {
   public static void main(String[] args) {
     System.out.println(solve(new int[] {8, 2, 5, 9}, 9));
+    System.out.println(solve(new int[] {8, 2, 5, 9}, 10));
   }
 
   static int solve(int[] arr, int target) {
