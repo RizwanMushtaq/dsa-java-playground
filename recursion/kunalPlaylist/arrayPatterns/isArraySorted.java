@@ -2,7 +2,7 @@ package recursion.kunalPlaylist.arrayPatterns;
 
 public class isArraySorted {
   public static void main(String[] args) {
-    System.out.println(solve(new int[] {5, 6, 10}));
+    System.out.println(solve(new int[] {5, 6, 6, 10}));
   }
 
   static boolean solve(int[] arr) {
