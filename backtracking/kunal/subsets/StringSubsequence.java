@@ -1,8 +1,9 @@
-package backtracking.subsets;
+package backtracking.kunal.subsets;
 
 public class StringSubsequence {
   public static void main(String[] args) {
     printSubsequence("abc");
+    printSubsequence("ab");
   }
 
   private static void printSubsequence(String str) {
