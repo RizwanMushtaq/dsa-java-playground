@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class Maze {
   public static void main(String[] args) {
-    boolean[][] grid =
-        new boolean[][] {
-          {true, true, true},
-          {true, false, true},
-          {true, true, true},
-        };
+    boolean[][] grid = {
+      {true, true, true},
+      {true, false, true},
+      {true, true, true},
+    };
     printPathsRestrictions("", grid, grid.length - 1, grid[0].length - 1);
     //    printPaths("", 3, 3);
   }
