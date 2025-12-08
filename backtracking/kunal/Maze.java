@@ -88,7 +88,7 @@ public class Maze {
       System.out.println(processed);
       return;
     }
-    if (grid[r][c] == false) return;
+    if (!grid[r][c]) return;
     if (r > 0) printPathsRestrictions(processed.concat("D"), grid, r - 1, c);
     if (c > 0) printPathsRestrictions(processed.concat("R"), grid, r, c - 1);
   }
