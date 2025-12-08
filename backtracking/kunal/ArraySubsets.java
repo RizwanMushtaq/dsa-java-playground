@@ -1,4 +1,4 @@
-package backtracking.kunal.subsets;
+package backtracking.kunal;
 
 import java.util.ArrayList;
 

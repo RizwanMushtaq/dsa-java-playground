@@ -1,4 +1,4 @@
-package backtracking.kunal.subsets;
+package backtracking.kunal;
 
 public class StringSubsequence {
   public static void main(String[] args) {
