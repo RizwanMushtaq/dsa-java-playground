@@ -41,15 +41,13 @@ public class Maze {
       return list;
     }
 
-    ArrayList<String> down = new ArrayList<>();
-    ArrayList<String> right = new ArrayList<>();
+    ArrayList<String> result = new ArrayList<>();
     if (r > 1) {
-      down = pathsList(processed.concat("D"), r - 1, c);
+      result.addAll(pathsList(processed.concat("D"), r - 1, c));
     }
     if (c > 1) {
-      right = pathsList(processed.concat("R"), r, c - 1);
+      result.addAll(pathsList(processed.concat("R"), r, c - 1));
     }
-    down.addAll(right);
-    return down;
+    return result;
   }
 }
