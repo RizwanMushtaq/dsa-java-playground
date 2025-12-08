@@ -10,7 +10,7 @@ public class Maze {
           {true, false, true},
           {true, true, true},
         };
-    printPathsRestrictions("", grid, 2, 2);
+    printPathsRestrictions("", grid, grid.length - 1, grid[0].length - 1);
     //    printPaths("", 3, 3);
   }
 
