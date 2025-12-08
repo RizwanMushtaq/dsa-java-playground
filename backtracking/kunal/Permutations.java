@@ -6,7 +6,7 @@ import java.util.ArrayList;
 // factorial
 public class Permutations {
   public static void main(String[] args) {
-    System.out.println(permutationsList("abc"));
+    System.out.println(countPermutationsFormula("abc"));
   }
 
   // It will print all possible permutations of String
@@ -47,5 +47,35 @@ public class Permutations {
       result.addAll(permutationsListHelper(first + ch + second, up.substring(1)));
     }
     return result;
+  }
+
+  private static int countPermutations(String str) {
+    return countPermutationsHelper("", str);
+  }
+
+  private static int countPermutationsHelper(String p, String up) {
+    if (up.isEmpty()) {
+      return 1;
+    }
+
+    char ch = up.charAt(0);
+    int count = 0;
+    for (int i = 0; i <= p.length(); i++) {
+      String first = p.substring(0, i);
+      String second = p.substring(i);
+      count += countPermutationsHelper(first + ch + second, up.substring(1));
+    }
+    return count;
+  }
+
+  private static int countPermutationsFormula(String str) {
+    return factorial(str.length());
+  }
+
+  private static int factorial(int n) {
+    if (n < 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
   }
 }
