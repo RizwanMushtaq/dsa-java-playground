@@ -10,7 +10,7 @@ public class Maze {
           {true, false, true},
           {true, true, true},
         };
-    pathsRestrictions("", grid, 2, 2);
+    printPathsRestrictions("", grid, 2, 2);
     //    printPaths("", 3, 3);
   }
 
@@ -83,13 +83,13 @@ public class Maze {
   // cell such as (0,0) But you can only right or down, You will also get
   // Boolean Matrix and based on true condition on a cell, you can move to
   // that cell otherwise there is obstacle
-  private static void pathsRestrictions(String processed, boolean[][] grid, int r, int c) {
+  private static void printPathsRestrictions(String processed, boolean[][] grid, int r, int c) {
     if (r == 0 && c == 0) {
       System.out.println(processed);
       return;
     }
     if (grid[r][c] == false) return;
-    if (r > 0) pathsRestrictions(processed.concat("D"), grid, r - 1, c);
-    if (c > 0) pathsRestrictions(processed.concat("R"), grid, r, c - 1);
+    if (r > 0) printPathsRestrictions(processed.concat("D"), grid, r - 1, c);
+    if (c > 0) printPathsRestrictions(processed.concat("R"), grid, r, c - 1);
   }
 }
