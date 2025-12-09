@@ -12,11 +12,6 @@ public class Maze {
     };
     int[][] path = new int[grid.length][grid[0].length];
     printAllPathsWithLevelsBacktrack("", grid, 0, 0, path, 1);
-    //    printPaths("", 3, 3);
-  }
-
-  private static int solve(int r, int c) {
-    return countPaths(r, c);
   }
 
   // counts paths for a given grid of size rows * columns such as 3*3
