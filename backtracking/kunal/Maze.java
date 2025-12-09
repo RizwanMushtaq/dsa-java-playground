@@ -6,10 +6,10 @@ public class Maze {
   public static void main(String[] args) {
     boolean[][] grid = {
       {true, true, true},
-      {true, false, true},
+      {true, true, true},
       {true, true, true},
     };
-    printPathsRestrictions("", grid, grid.length - 1, grid[0].length - 1);
+    printAllPathsBacktrack("", grid, 0, 0);
     //    printPaths("", 3, 3);
   }
 
@@ -90,5 +90,24 @@ public class Maze {
     if (!grid[r][c]) return;
     if (r > 0) printPathsRestrictions(processed.concat("D"), grid, r - 1, c);
     if (c > 0) printPathsRestrictions(processed.concat("R"), grid, r, c - 1);
+  }
+
+  // Its Backtracking :)
+  // Here you make a change and do some work, when that work is done, revert
+  // the change.
+  private static void printAllPathsBacktrack(String processed, boolean[][] grid, int r, int c) {
+    if (r == grid.length - 1 && c == grid[0].length - 1) {
+      System.out.println(processed);
+      return;
+    }
+    if (!grid[r][c]) return;
+    grid[r][c] = false; // I am considering this path
+    if (r < grid.length - 1) printAllPathsBacktrack(processed.concat("D"), grid, r + 1, c);
+    if (c < grid[0].length - 1) printAllPathsBacktrack(processed.concat("R"), grid, r, c + 1);
+    if (c > 0) printAllPathsBacktrack(processed + "L", grid, r, c - 1);
+    if (r > 0) printAllPathsBacktrack(processed + "U", grid, r - 1, c);
+    // So before function gets removed, also remove the changes that were made
+    // by that function
+    grid[r][c] = true;
   }
 }
