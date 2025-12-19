@@ -2,6 +2,13 @@ package greedyAlgorithms.huffman;
 
 import java.util.*;
 
+/*
+ * In following the feeder string taken as All ASCII character from 32 to 126.
+ * It takes the feeder and creates encoder and decoder Hashmaps.
+ * So any message coded encoded using encode method and decoded using decode
+ * method.
+ *
+ */
 public class HuffmanAlgorithm {
   HashMap<Character, String> encoder;
   HashMap<String, Character> decoder;
