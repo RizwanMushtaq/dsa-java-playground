@@ -1,0 +1,14 @@
+package a_generalAlgorithms.recursion.kunalPlaylist.introToRecursion;
+
+public class Fibonacci {
+  public static void main(String[] args) {
+    int result = fibo(4);
+    System.out.println(result);
+  }
+
+  static int fibo(int n) {
+    if (n < 2) return n;
+
+    return fibo(n - 1) + fibo(n - 2);
+  }
+}
