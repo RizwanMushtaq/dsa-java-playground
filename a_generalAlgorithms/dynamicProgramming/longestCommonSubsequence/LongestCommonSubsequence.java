@@ -27,7 +27,10 @@ public class LongestCommonSubsequence {
   }
 
   /**
-   * The time complexity of following solution is -
+   * Using Recursion to solve the problem.
+   *
+   * <p>The time complexity of following solution: If String x length is m If String y length is n
+   * and n < m -> O(2 raise to the power n)
    *
    * @param x String
    * @param y String
@@ -48,7 +51,12 @@ public class LongestCommonSubsequence {
         : subsequenceYString;
   }
 
-  /** Now Using DP to solve the problem. */
+  /**
+   * Now Using DP to solve the problem.
+   *
+   * <p>The time complexity of following solution: If String x length is and If String y length is
+   * n, time complexity is O(m * n)
+   */
   private static String LCSUsingDP(String x, String y) {
     int lengthX = x.length();
     int lengthY = y.length();
