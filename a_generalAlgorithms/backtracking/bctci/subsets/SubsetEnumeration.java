@@ -56,6 +56,11 @@ public class SubsetEnumeration {
    *
    * <p>This is the standard and most efficient way.
    *
+   * <p>We use the BAD method to analyze the time and space complexity of the backtracking solution:
+   * O(b raise to power d * A). where: b is the branching factor - 2. d is the depth of the cal tree
+   * which is n+1. A is the additional (non-recursive) work per node: O(n) for the copy at the
+   * leaves.
+   *
    * @param chars Character array
    * @return returns List of all subsets
    */
