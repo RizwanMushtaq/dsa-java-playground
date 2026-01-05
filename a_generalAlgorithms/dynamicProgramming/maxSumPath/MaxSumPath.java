@@ -26,8 +26,7 @@ class MaxSumPathSol {
     if (r == rows - 1 && c == columns - 1) return grid[r][c];
     if (memo[r][c] != 0) return memo[r][c];
     else if (r == rows - 1) {
-      memo[r][c] = grid[r][c] + visit(r, c + 1, grid, memo);
-      return memo[r][c];
+      return memo[r][c] = grid[r][c] + visit(r, c + 1, grid, memo);
     } else if (c == columns - 1) {
       return memo[r][c] = grid[r][c] + visit(r + 1, c, grid, memo);
     } else {
