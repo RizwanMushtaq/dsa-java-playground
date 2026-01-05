@@ -1,6 +1,5 @@
 package a_generalAlgorithms.dynamicProgramming.bctci.problem40point1;
 
-
 public class RoadTripMemoization {
   public static void main(String[] args) {
     RoadTripMemoization roadTripMemoization = new RoadTripMemoization();
@@ -8,6 +7,14 @@ public class RoadTripMemoization {
     System.out.println(roadTripMemoization.solve(times1));
   }
 
+  /**
+   * For this problem, we have:
+   *
+   * <p>Subproblems: n. Non-recursive work: O(1). Time: O(n). Extra space: O(n) - for the memo map.
+   *
+   * @param times int array
+   * @return int
+   */
   public int solve(int[] times) {
     int n = times.length;
     if (n < 3) {
