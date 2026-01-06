@@ -6,7 +6,7 @@ package a_generalAlgorithms.dynamicProgramming.bctci.problem40point4;
  */
 public class NoOfPaths {
   private int rows, cols;
-  private int[][] grid, memo;
+  private int[][] memo;
 
   public static void main(String[] args) {
     NoOfPaths noOfPaths = new NoOfPaths();
