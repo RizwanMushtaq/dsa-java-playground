@@ -54,7 +54,7 @@ public class LongestCommonSubsequence {
   /**
    * Now Using DP to solve the problem.
    *
-   * <p>The time complexity of following solution: If String x length is and If String y length is
+   * <p>The time complexity of following solution: If String x length is m and If String y length is
    * n, time complexity is O(m * n)
    */
   private static String LCSUsingDP(String x, String y) {
