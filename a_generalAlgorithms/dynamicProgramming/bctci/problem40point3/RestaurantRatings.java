@@ -2,6 +2,20 @@ package a_generalAlgorithms.dynamicProgramming.bctci.problem40point3;
 
 import java.util.*;
 
+/**
+ * We are doing a road trip and trying to plan where to stop to eat. There are n restaurants along
+ * the route. We are given an array, ratings, with the ratings of all the restaurants maximizing the
+ * sum of ratings of the places where we stop. The only constraint is that we don't want to stop at
+ * 2 consecutive restaurants, as we would be too full. Return the optimal sum of ratings.
+ *
+ * <p>Example 1: ratings = [8, 1, 3, 9, 5, 2, 1] Output: 19. The optimal restaurants are: [*8*, 1,
+ * 3, *9*, 5, *2*, 1]
+ *
+ * <p>Example 2: ratings = [8, 1, 3, 7, 5, 2, 4] Output: 20. The optimal restaurants are: [*8*, 1,
+ * *3*, 7, *5*, 2, *4*].
+ *
+ * <p>Example 3: ratings = [] Output: 0
+ */
 public class RestaurantRatings {
   private double[] ratings;
   private int length;
@@ -17,6 +31,14 @@ public class RestaurantRatings {
    * <p>Subproblems: n. Non-recursive work per subproblem: O(1). Time: O(n). Extra space: O(n) - for
    * the memoization map. The space can be optimized to O(1) by using tabulation with the rolling
    * array optimization
+   *
+   * <p>Choices: eat at restaurant i or not. If we stop at restaurant i, we add ratings[i] to our
+   * total, but we have to skip restaurant i+1. Aggregation logic: We pick the maximum between the
+   * two options:
+   *
+   * <p>rating_sum(i) = max(ratings[i] + rating_sum(i+2), rating_sum(i+1))
+   *
+   * <p>Base case: rating_sum(n) = 0 (there are no restaurants left).
    *
    * @param inputRatings list
    * @return max ratings
