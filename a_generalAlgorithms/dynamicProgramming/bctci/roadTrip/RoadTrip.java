@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point1;
+package a_generalAlgorithms.dynamicProgramming.bctci.roadTrip;
 
 public class RoadTrip {
   public static void main(String[] args) {

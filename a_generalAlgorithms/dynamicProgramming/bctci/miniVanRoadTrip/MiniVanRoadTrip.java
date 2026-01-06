@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point2;
+package a_generalAlgorithms.dynamicProgramming.bctci.miniVanRoadTrip;
 
 import java.util.HashMap;
 import java.util.Map;

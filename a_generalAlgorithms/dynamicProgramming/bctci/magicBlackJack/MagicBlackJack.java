@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point5;
+package a_generalAlgorithms.dynamicProgramming.bctci.magicBlackJack;
 
 import java.util.*;
 

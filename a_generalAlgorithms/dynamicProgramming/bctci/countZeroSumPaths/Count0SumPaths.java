@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point4;
+package a_generalAlgorithms.dynamicProgramming.bctci.countZeroSumPaths;
 
 import java.util.HashMap;
 import java.util.Map;

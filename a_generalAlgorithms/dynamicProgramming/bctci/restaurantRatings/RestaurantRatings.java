@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point3;
+package a_generalAlgorithms.dynamicProgramming.bctci.restaurantRatings;
 
 import java.util.*;
 

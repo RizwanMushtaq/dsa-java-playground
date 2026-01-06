@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point4;
+package a_generalAlgorithms.dynamicProgramming.bctci.countZeroSumPaths;
 
 /**
  * If we can move right, bottom, diagonal -> how many paths are there to move from top-left to

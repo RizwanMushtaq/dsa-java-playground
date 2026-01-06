@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point7;
+package a_generalAlgorithms.dynamicProgramming.bctci.lcsLength;
 
 import java.util.*;
 

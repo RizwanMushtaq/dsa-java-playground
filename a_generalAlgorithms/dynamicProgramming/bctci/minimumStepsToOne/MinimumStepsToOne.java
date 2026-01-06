@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point6;
+package a_generalAlgorithms.dynamicProgramming.bctci.minimumStepsToOne;
 
 import java.util.HashMap;
 import java.util.Map;

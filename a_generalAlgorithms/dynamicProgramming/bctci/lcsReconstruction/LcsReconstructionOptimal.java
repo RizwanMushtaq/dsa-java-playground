@@ -1,4 +1,4 @@
-package a_generalAlgorithms.dynamicProgramming.bctci.problem40point8;
+package a_generalAlgorithms.dynamicProgramming.bctci.lcsReconstruction;
 
 import java.util.*;
 
