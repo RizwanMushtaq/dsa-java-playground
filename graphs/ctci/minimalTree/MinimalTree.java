@@ -1,5 +1,11 @@
 package graphs.ctci.minimalTree;
 
+/**
+ * CTCI Book -> Minimum Tree
+ *
+ * <p>Given a sorted (increasing order) array with unique integer elements, write an algorithm to
+ * create a binary search tree with minimal height.
+ */
 public class MinimalTree {
   public static void main(String[] args) {
     int[] arr = {1, 2, 3, 4, 5, 6, 7};
