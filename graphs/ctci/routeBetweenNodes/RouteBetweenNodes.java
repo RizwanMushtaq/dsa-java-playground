@@ -21,17 +21,17 @@ public class RouteBetweenNodes {
     node2.neighbours.add(node0);
     node3.neighbours.add(node2);
 
-    RouteBetweenNodes routeBetweenNodes = new RouteBetweenNodes();
-    System.out.println(routeBetweenNodes.solveDFS(node0, node2));
+    System.out.println(new RouteBetweenNodes().solveDFS(node0, node2));
+    System.out.println(new RouteBetweenNodes().solveBFS(node0, node3));
   }
 
   private boolean solveBFS(Node start, Node end) {
-    if (start == end) return true;
+    if (start.equals(end)) return true;
     Queue<Node> queue = new LinkedList<>();
     queue.add(start);
     while (!queue.isEmpty()) {
       Node node = queue.remove();
-      if (node == end) {
+      if (node.equals(end)) {
         return true;
       }
       node.visited = true;
@@ -50,7 +50,7 @@ public class RouteBetweenNodes {
   }
 
   private void visit(Node start, Node end) {
-    if (start == end) {
+    if (start.equals(end)) {
       result = true;
     }
     start.visited = true;
