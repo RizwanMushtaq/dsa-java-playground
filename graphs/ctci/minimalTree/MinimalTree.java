@@ -1,7 +1,7 @@
 package graphs.ctci.minimalTree;
 
 /**
- * CTCI Book -> Minimum Tree
+ * CTCI Book -> 4.2 - Minimum Tree
  *
  * <p>Given a sorted (increasing order) array with unique integer elements, write an algorithm to
  * create a binary search tree with minimal height.
