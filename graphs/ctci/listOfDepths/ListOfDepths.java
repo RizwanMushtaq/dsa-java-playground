@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ListOfDepths {
-  public static void main(String[] args) {
+  public static void main() {
     Node root = new Node(8);
     root.left = new Node(4);
     root.right = new Node(10);
