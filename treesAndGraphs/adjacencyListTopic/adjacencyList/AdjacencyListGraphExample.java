@@ -1,0 +1,193 @@
+package treesAndGraphs.adjacencyListTopic.adjacencyList;
+
+import java.util.*;
+
+public class AdjacencyListGraphExample {
+  private final Map<Vertex, Set<Vertex>> adjVertices;
+
+  private AdjacencyListGraphExample() {
+    adjVertices = new HashMap<>();
+  }
+
+  public static void main(String[] args) {
+    AdjacencyListGraphExample myGraph = new AdjacencyListGraphExample();
+    myGraph.addVertex("a");
+    myGraph.addVertex("b");
+    myGraph.addVertex("c");
+    myGraph.addVertex("d");
+    myGraph.addVertex("e");
+    myGraph.addEdge("a", "b");
+    myGraph.addEdge("a", "c");
+    myGraph.addEdge("b", "c");
+    myGraph.addEdge("a", "d");
+    myGraph.addEdge("a", "e");
+
+    myGraph.printGraph();
+    //    System.out.println("adjacency vertices are " + myGraph.getAdjVertices("a"));
+    System.out.println(
+        "depth first traversal: "
+            + myGraph.depthFirstTraversal(myGraph.adjVertices, new Vertex("b")));
+    System.out.println("dfs without stack: " + myGraph.dfs(myGraph.adjVertices, new Vertex("b")));
+    System.out.println(
+        "breadth first traversal: "
+            + myGraph.breadthFirstTraversal(myGraph.adjVertices, new Vertex("b")));
+    //    myGraph.removeVertex("a");
+    //    myGraph.printGraph();
+    //    myGraph.addVertex("a");
+    //    myGraph.addEdge("a", "b");
+    //    myGraph.addEdge("a", "c");
+    //    myGraph.printGraph();
+    //    myGraph.removeEdge("b", "c");
+    //    myGraph.printGraph();
+
+    //    System.out.println("number of nodes are " + myGraph.getNumberOfNodes());
+    //    System.out.println("number of edges are " + myGraph.getNumberOfEdges());
+    //    System.out.println("degree of node a is " + myGraph.getDegreeOfNode("a"));
+    //    System.out.println("degree of node r is " + myGraph.getDegreeOfNode("r"));
+    //    myGraph.printNeighborsOfNode("c");
+    //    myGraph.printNeighborsOfNode("r");
+  }
+
+  private void addVertex(String label) {
+    adjVertices.putIfAbsent(new Vertex(label), new HashSet<>());
+  }
+
+  private void removeVertex(String label) {
+    Vertex v = new Vertex(label);
+    adjVertices.values().forEach(set -> set.remove(v));
+    adjVertices.remove(v);
+  }
+
+  private void addEdge(String label1, String label2) {
+    Vertex v1 = new Vertex(label1);
+    Vertex v2 = new Vertex(label2);
+    adjVertices.get(v1).add(v2);
+    adjVertices.get(v2).add(v1);
+  }
+
+  private void removeEdge(String label1, String label2) {
+    Vertex v1 = new Vertex(label1);
+    Vertex v2 = new Vertex(label2);
+    Set<Vertex> neighbors1 = adjVertices.get(v1);
+    Set<Vertex> neighbors2 = adjVertices.get(v2);
+    if (neighbors1 != null) neighbors1.remove(v2);
+    if (neighbors2 != null) neighbors2.remove(v1);
+  }
+
+  private Set<Vertex> getAdjVertices(String label) {
+    return adjVertices.get(new Vertex(label));
+  }
+
+  private int getNumberOfNodes() {
+    return adjVertices.size();
+  }
+
+  private int getNumberOfEdges() {
+    int count = 0;
+    for (Vertex vertex : adjVertices.keySet()) {
+      count += adjVertices.get(vertex).size();
+    }
+    return count / 2;
+  }
+
+  private int getDegreeOfNode(String label) {
+    Vertex vertex = new Vertex(label);
+    if (!adjVertices.containsKey(vertex)) return -1;
+    return adjVertices.get(vertex).size();
+  }
+
+  private void printNeighborsOfNode(String label) {
+    Vertex vertex = new Vertex(label);
+    if (!adjVertices.containsKey(vertex)) {
+      System.out.println("node not found: " + vertex);
+      return;
+    }
+    Set<Vertex> neighbors = adjVertices.get(vertex);
+    System.out.println("neighbors are " + neighbors);
+  }
+
+  private void printGraph() {
+    System.out.println("***graph***");
+    for (Vertex v : adjVertices.keySet()) {
+      System.out.println(v + "-" + adjVertices.get(v));
+    }
+    System.out.println("***end***");
+  }
+
+  private Set<Vertex> depthFirstTraversal(Map<Vertex, Set<Vertex>> graph, Vertex vertex) {
+    if (vertex == null || !graph.containsKey(vertex)) return new HashSet<>();
+    Set<Vertex> visited = new LinkedHashSet<>();
+    Stack<Vertex> stack = new Stack<>();
+    stack.push(vertex);
+    while (!stack.isEmpty()) {
+      Vertex v = stack.pop();
+      if (!visited.contains(v)) {
+        visited.add(v);
+        for (Vertex item : getAdjVertices(v.label)) {
+          stack.push(item);
+        }
+      }
+    }
+    return visited;
+  }
+
+  private Set<Vertex> dfs(Map<Vertex, Set<Vertex>> graph, Vertex vertex) {
+    if (vertex == null || !graph.containsKey(vertex)) return new HashSet<>();
+    Set<Vertex> visited = new LinkedHashSet<>();
+    dfsVisit(graph, vertex, visited);
+    return visited;
+  }
+
+  private void dfsVisit(Map<Vertex, Set<Vertex>> graph, Vertex vertex, Set<Vertex> visited) {
+    visited.add(vertex);
+    for (Vertex item : getAdjVertices(vertex.label)) {
+      if (!visited.contains(item)) {
+        dfsVisit(graph, item, visited);
+      }
+    }
+  }
+
+  private Set<Vertex> breadthFirstTraversal(Map<Vertex, Set<Vertex>> graph, Vertex vertex) {
+    if (vertex == null || !graph.containsKey(vertex)) return new HashSet<>();
+    Set<Vertex> visited = new LinkedHashSet<>();
+    Queue<Vertex> queue = new LinkedList<>();
+    queue.add(vertex);
+    visited.add(vertex);
+    while (!queue.isEmpty()) {
+      Vertex v = queue.remove();
+      for (Vertex item : getAdjVertices(v.label)) {
+        if (!visited.contains(item)) {
+          visited.add(item);
+          queue.add(item);
+        }
+      }
+    }
+    return visited;
+  }
+}
+
+class Vertex {
+  String label;
+
+  Vertex(String label) {
+    this.label = label;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Vertex vertex = (Vertex) o;
+    return Objects.equals(label, vertex.label);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(label);
+  }
+
+  @Override
+  public String toString() {
+    return label;
+  }
+}
