@@ -7,11 +7,16 @@ import java.util.*;
  *
  * <p>Given a directed Graph, design an algorithm to find out whether there is a route between two
  * nodes.
+ *
+ * <p>Solution: We can use simple graph traversal such as depth first search or breadth first
+ * search. We start with one of the two nodes and during traversal check if the other node is found.
+ * We should mark any node found in the course of the algorithm as already visited to avoid cycles
+ * and repetitions of the nodes.
  */
 public class RouteBetweenNodes {
   private boolean result = false;
 
-  public static void main(String[] args) {
+  public static void main() {
     Node node0 = new Node("0");
     Node node1 = new Node("1");
     Node node2 = new Node("2");
