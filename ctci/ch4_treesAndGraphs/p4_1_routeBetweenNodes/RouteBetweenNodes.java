@@ -1,4 +1,4 @@
-package treesAndGraphs.ctci.routeBetweenNodes;
+package ctci.ch4_treesAndGraphs.p4_1_routeBetweenNodes;
 
 import java.util.*;
 

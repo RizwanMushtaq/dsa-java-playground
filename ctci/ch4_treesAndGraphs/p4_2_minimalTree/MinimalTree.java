@@ -1,4 +1,4 @@
-package treesAndGraphs.ctci.minimalTree;
+package ctci.ch4_treesAndGraphs.p4_2_minimalTree;
 
 /**
  * CTCI Book -> 4.2 - Minimum Tree
@@ -7,7 +7,7 @@ package treesAndGraphs.ctci.minimalTree;
  * create a binary search tree with minimal height.
  */
 public class MinimalTree {
-  public static void main(String[] args) {
+  public static void main() {
     int[] arr = {1, 2, 3, 4, 5, 6, 7};
     Node n = new MinimalTree().solve(arr);
     printInOrderTraversal(n);

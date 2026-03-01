@@ -1,4 +1,4 @@
-package treesAndGraphs.ctci.listOfDepths;
+package ctci.ch4_treesAndGraphs.p4_3_listOfDepths;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

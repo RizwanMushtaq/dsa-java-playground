@@ -1,4 +1,4 @@
-package treesAndGraphs.ctci.checkBalanced;
+package ctci.ch4_treesAndGraphs.p4_4_checkBalanced;
 
 /**
  * Implement a function to check if a binary tree is balanced. For the purposes of this question, a
