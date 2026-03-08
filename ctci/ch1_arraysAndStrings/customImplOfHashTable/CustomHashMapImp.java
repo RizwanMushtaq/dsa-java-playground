@@ -65,14 +65,14 @@ class MyHashMap {
       entities[hash] = null;
     }
   }
-}
 
-class Entity {
-  String key;
-  String value;
+  private static class Entity {
+    String key;
+    String value;
 
-  public Entity(String key, String value) {
-    this.key = key;
-    this.value = value;
+    public Entity(String key, String value) {
+      this.key = key;
+      this.value = value;
+    }
   }
 }
