@@ -29,6 +29,13 @@ package ctci.ch1_arraysAndStrings.customImplOfHashTable;
 class CustomHashMapImp {
   public static void main() {
     System.out.println("Custom Hash Map");
+    MyHashMap myHashMap = new MyHashMap();
+    myHashMap.put("Mango", "King of Fruits");
+    myHashMap.put("Apple", "Sweet red food");
+    myHashMap.put("Banana", "Only Carbs");
+
+    System.out.println(myHashMap.get("Mango"));
+    System.out.println(myHashMap.get("Banana"));
   }
 }
 
@@ -50,6 +57,13 @@ class MyHashMap {
       return entities[hash].value;
     }
     return null;
+  }
+
+  public void remove(String key) {
+    int hash = Math.abs(key.hashCode() % entities.length);
+    if (entities[hash] != null && entities[hash].key.equals(key)) {
+      entities[hash] = null;
+    }
   }
 }
 
